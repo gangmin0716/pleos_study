@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Pleos Connect uses a light UI in both modes -->
+    <style name="Theme.Pleos_study" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/pleos_text</item>
+        <item name="colorPrimaryVariant">@color/pleos_text</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/pleos_blue</item>
+        <item name="colorSecondaryVariant">@color/pleos_blue</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:windowBackground">@color/pleos_bg</item>
+        <item name="android:statusBarColor">@color/pleos_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

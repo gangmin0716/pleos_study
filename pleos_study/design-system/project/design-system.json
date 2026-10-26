@@ -1,0 +1,158 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "Icons": {
+      "files": {
+        "ic_arrow.svg": {
+          "blob": "71a47e1970e2195c724ca05863c05721",
+          "name": "ic_arrow.svg",
+          "size": 595,
+          "type": "image/svg+xml"
+        },
+        "ic_arrow_left.svg": {
+          "blob": "816bbcf49169797b55428ec21298c0d2",
+          "name": "ic_arrow_left.svg",
+          "size": 587,
+          "type": "image/svg+xml"
+        },
+        "ic_call.svg": {
+          "blob": "8da165071ccd5c8e49a4c93a46f164b5",
+          "name": "ic_call.svg",
+          "size": 986,
+          "type": "image/svg+xml"
+        },
+        "ic_clock.svg": {
+          "blob": "d6c0c81020590a73a9930aafdbecfe02",
+          "name": "ic_clock.svg",
+          "size": 770,
+          "type": "image/svg+xml"
+        },
+        "ic_dropdown.svg": {
+          "blob": "4616f7075930d38ced3bf00e077cc9bf",
+          "name": "ic_dropdown.svg",
+          "size": 439,
+          "type": "image/svg+xml"
+        },
+        "ic_more.svg": {
+          "blob": "1975270a1b148373fda98553a5d73607",
+          "name": "ic_more.svg",
+          "size": 859,
+          "type": "image/svg+xml"
+        },
+        "ic_plus.svg": {
+          "blob": "abedec9b750f1790f6210ba401f50654",
+          "name": "ic_plus.svg",
+          "size": 697,
+          "type": "image/svg+xml"
+        },
+        "ic_refresh.svg": {
+          "blob": "96a3f6bdf9dc9542d80627672e17b43f",
+          "name": "ic_refresh.svg",
+          "size": 1027,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Icons",
+      "order": [
+        "ic_clock.svg",
+        "ic_refresh.svg",
+        "ic_more.svg",
+        "ic_plus.svg",
+        "ic_arrow.svg",
+        "ic_arrow_left.svg",
+        "ic_dropdown.svg",
+        "ic_call.svg"
+      ],
+      "tile": "s"
+    },
+    "Telltales": {
+      "files": {
+        "telltale_abs.svg": {
+          "blob": "4a18f8606940eb37d5de6260a4f30fd9",
+          "name": "telltale_abs.svg",
+          "size": 4512,
+          "type": "image/svg+xml"
+        },
+        "telltale_brake_warning.svg": {
+          "blob": "84993d38cdf4e8599bf79cb16ede1838",
+          "name": "telltale_brake_warning.svg",
+          "size": 1619,
+          "type": "image/svg+xml"
+        },
+        "telltale_epb.svg": {
+          "blob": "493d403932cf36943c0d32ec041b59a2",
+          "name": "telltale_epb.svg",
+          "size": 2026,
+          "type": "image/svg+xml"
+        },
+        "telltale_seatbelt.svg": {
+          "blob": "8f6ca25ccf802cb581770b6bed37d6da",
+          "name": "telltale_seatbelt.svg",
+          "size": 2306,
+          "type": "image/svg+xml"
+        },
+        "telltale_tcs.svg": {
+          "blob": "a0bc3b81303abcc4c341d491da0918ba",
+          "name": "telltale_tcs.svg",
+          "size": 1921,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Telltales",
+      "order": [
+        "telltale_tcs.svg",
+        "telltale_abs.svg",
+        "telltale_brake_warning.svg",
+        "telltale_epb.svg",
+        "telltale_seatbelt.svg"
+      ],
+      "tile": "s"
+    },
+    "Vehicle": {
+      "files": {
+        "car_top.svg": {
+          "blob": "613fb0eb74a2e477f2ec1ddc1c52bec5",
+          "name": "car_top.svg",
+          "size": 3434,
+          "type": "image/svg+xml"
+        },
+        "ic_steering.svg": {
+          "blob": "51f5193c51bcd36290288c95e6ede11d",
+          "name": "ic_steering.svg",
+          "size": 1720,
+          "type": "image/svg+xml"
+        }
+      },
+      "name": "Vehicle",
+      "order": [
+        "car_top.svg",
+        "ic_steering.svg"
+      ]
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-10-26T03:37:40Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "groups": [
+    "Icons",
+    "Telltales",
+    "Vehicle"
+  ],
+  "lastChange": {
+    "by": "Claude",
+    "at": "2026-10-26T03:46:15Z",
+    "via": "Claude Code",
+    "note": "MusicPlayer 컴포넌트와 Pleos static/light·alpha 토큰 추가"
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "ACDash",
+  "sections": {},
+  "title": "AC 계기판"
+}

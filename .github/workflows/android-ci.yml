@@ -1,0 +1,42 @@
+name: android-ci
+
+# PR마다 앱을 빌드하고 Android Lint와 단위 테스트를 돌린다.
+# 브랜치 보호(Settings → Branches)에서 "android-ci / build"를 필수 체크로 지정하면 깨진 PR은 머지할 수 없다.
+on:
+  pull_request:
+    paths:
+      - "pleos_study/**"
+      - ".github/workflows/android-ci.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: pleos_study
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Lint · 단위 테스트 · 디버그 빌드
+        run: ./gradlew --console=plain :app:lintDebug :app:testDebugUnitTest :app:assembleDebug
+
+      - name: Lint 리포트
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-report
+          path: pleos_study/app/build/reports/lint-results-debug.html

@@ -1,0 +1,54 @@
+{
+  "_help": [
+    "Edit this file to rearrange the dashboard, then rebuild the app.",
+    "widgets: cluster, music, map, laps, fuel, tyres. Leave one out to hide it.",
+    "columns / rows: relative sizes, like layout_weight. [1, 2] = second track twice as big.",
+    "col / row start at 0. colSpan / rowSpan default to 1.",
+    "layouts: the one with the largest minWidth (dp) that fits the window is used.",
+    "gap: space between cards in dp."
+  ],
+  "gap": 16,
+  "layouts": [
+    {
+      "name": "wide",
+      "minWidth": 1100,
+      "columns": [1, 1, 1],
+      "rows": [4, 1, 4],
+      "widgets": [
+        { "type": "cluster", "col": 0, "row": 0 },
+        { "type": "music",   "col": 1, "row": 0, "colSpan": 2 },
+        { "type": "map",     "col": 0, "row": 1, "rowSpan": 2 },
+        { "type": "laps",    "col": 1, "row": 1, "rowSpan": 2 },
+        { "type": "fuel",    "col": 2, "row": 1 },
+        { "type": "tyres",   "col": 2, "row": 2 }
+      ]
+    },
+    {
+      "name": "medium",
+      "minWidth": 700,
+      "columns": [1, 1],
+      "rows": [3, 3, 1, 3],
+      "widgets": [
+        { "type": "cluster", "col": 0, "row": 0 },
+        { "type": "music",   "col": 1, "row": 0 },
+        { "type": "map",     "col": 0, "row": 1, "rowSpan": 3 },
+        { "type": "laps",    "col": 1, "row": 1 },
+        { "type": "fuel",    "col": 1, "row": 2 },
+        { "type": "tyres",   "col": 1, "row": 3 }
+      ]
+    },
+    {
+      "name": "compact",
+      "minWidth": 0,
+      "columns": [1, 1],
+      "rows": [3, 2, 2],
+      "widgets": [
+        { "type": "cluster", "col": 0, "row": 0, "colSpan": 2 },
+        { "type": "map",     "col": 0, "row": 1 },
+        { "type": "laps",    "col": 1, "row": 1 },
+        { "type": "fuel",    "col": 0, "row": 2 },
+        { "type": "tyres",   "col": 1, "row": 2 }
+      ]
+    }
+  ]
+}

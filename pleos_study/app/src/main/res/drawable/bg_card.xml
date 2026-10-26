@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pleos surface: white, 32dp corners (buttons/basic/large radius); shadow comes from elevation -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/background_secondary" />
+    <corners android:radius="@dimen/radius_card" />
+</shape>

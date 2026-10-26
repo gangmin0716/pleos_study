@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Music card ground when no album art is available: Pleos basic/600 into basic/800 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:angle="315"
+        android:endColor="@color/basic_800"
+        android:startColor="@color/basic_600" />
+    <corners android:radius="@dimen/radius_card" />
+</shape>

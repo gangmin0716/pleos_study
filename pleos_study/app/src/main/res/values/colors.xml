@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Pleos Connect design tokens (Figma: Pleos_Connect_design_assets ✦ Foundation / Colors) -->
+    <color name="background_primary">#FFF7F8FA</color>
+    <color name="background_secondary">#FFFFFFFF</color>
+    <color name="basic_100">#FFEDEEF2</color>
+    <color name="basic_200">#FFE0E1E6</color>
+    <color name="text_dark_primary">#FF131417</color>
+    <color name="text_dark_secondary">#D6131417</color>
+    <color name="text_dark_tertiary">#A3131417</color>
+    <color name="text_dark_quaternary">#52131417</color>
+    <color name="basic_600">#FF44464E</color>
+    <color name="basic_800">#FF1D1E21</color>
+    <!-- Pleos static/light and alpha tokens, for text and controls on the music card's album-art ground -->
+    <color name="static_light_100">#FFFFFFFF</color>
+    <color name="static_light_200">#D6FFFFFF</color>
+    <color name="static_light_300">#A3FFFFFF</color>
+    <color name="static_light_400">#52FFFFFF</color>
+    <color name="alpha_light_100">#1AFFFFFF</color>
+    <color name="alpha_light_200">#33FFFFFF</color>
+    <color name="alpha_dark_300">#4D131417</color>
+    <color name="alpha_dark_500">#80131417</color>
+    <color name="divider_primary">#0D131417</color>
+    <color name="divider_secondary">#1A131417</color>
+    <color name="button_basic_enabled">#0D131417</color>
+    <color name="button_basic_pressed">#1A131417</color>
+    <color name="button_filled_enabled">#FF44464E</color>
+    <color name="button_filled_pressed">#FF313236</color>
+    <color name="media_music_primary">#FF4781FF</color>
+    <color name="call_end">#FFFE3D16</color>
+    <color name="switch_on">#FF02C265</color>
+    <!-- Amber telltale colour from the driving view icons -->
+    <color name="telltale_amber">#FFFF8A00</color>
+
+    <!-- App roles, mapped onto the tokens above -->
+    <color name="pleos_bg">@color/background_primary</color>
+    <color name="pleos_surface">@color/background_secondary</color>
+    <color name="pleos_divider">@color/divider_secondary</color>
+    <color name="pleos_track">@color/basic_100</color>
+    <color name="pleos_text">@color/text_dark_primary</color>
+    <color name="pleos_text_secondary">@color/text_dark_tertiary</color>
+    <color name="pleos_text_disabled">@color/text_dark_quaternary</color>
+    <color name="pleos_blue">@color/media_music_primary</color>
+    <color name="pleos_orange">@color/telltale_amber</color>
+    <color name="pleos_red">@color/call_end</color>
+    <color name="pleos_green">@color/switch_on</color>
+    <color name="pleos_red_tint">#29FE3D16</color>
+    <color name="pleos_blue_tint">#294781FF</color>
+</resources>

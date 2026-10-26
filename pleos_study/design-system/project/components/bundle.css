@@ -1,0 +1,93 @@
+/* AC 계기판 component styles. Every value comes from tokens.css (Pleos foundation + app layer). */
+.acd-stage { font-family: var(--font-sans); color: var(--text-primary); background: var(--background-primary); padding: 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; box-sizing: border-box; }
+.acd-stage * { box-sizing: border-box; }
+.acd-num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+/* Card */
+.acd-card { background: var(--background-secondary); border-radius: var(--radius-card); box-shadow: var(--shadow-level2); padding: var(--spacing-07); display: flex; flex-direction: column; gap: var(--spacing-04); min-width: 0; }
+.acd-card__head { display: flex; align-items: center; gap: 10px; }
+.acd-card__head img { width: 32px; height: 32px; }
+.acd-card__title { font-size: 26px; line-height: 34px; font-weight: 700; flex: 1; }
+.acd-row { display: flex; align-items: center; gap: var(--spacing-05); }
+.acd-row__label { flex: 1; font-size: 24px; line-height: 28px; color: var(--text-tertiary); }
+.acd-row__value { font-size: 30px; line-height: 38px; font-weight: 700; }
+.acd-divider { height: 1px; background: var(--divider-secondary); }
+.acd-badge { background: var(--button-filled-enabled); color: var(--on-filled); border-radius: var(--radius-badge); padding: 4px 14px; font-size: 20px; line-height: 24px; font-weight: 700; }
+
+/* Buttons (Pleos ivi_basic_button Small) */
+.acd-btn { height: var(--size-button-small); min-width: 100px; padding: 0 24px; border: 0; border-radius: var(--radius-button-small); display: inline-flex; align-items: center; justify-content: center; gap: var(--spacing-04); font: 700 26px/34px var(--font-sans); background: var(--button-basic-enabled); color: var(--text-primary); cursor: pointer; }
+.acd-btn:active, .acd-btn.is-pressed { background: var(--button-basic-pressed); }
+.acd-btn--filled { background: var(--button-filled-enabled); color: var(--on-filled); }
+.acd-btn--filled:active, .acd-btn--filled.is-pressed { background: var(--button-filled-pressed); }
+.acd-btn:disabled { background: transparent; color: var(--text-quaternary); box-shadow: inset 0 0 0 2px var(--divider-secondary); cursor: default; }
+.acd-btn:focus-visible, .acd-icon-btn:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
+.acd-btn img { width: 28px; height: 28px; }
+
+/* Icon button (Pleos ivi_icon_button Basic, Medium) */
+.acd-icon-btn { width: var(--size-button-medium); height: var(--size-button-medium); border: 0; border-radius: var(--radius-icon-button); background: var(--button-basic-enabled); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; padding: 0; }
+.acd-icon-btn:active, .acd-icon-btn.is-pressed { background: var(--button-basic-pressed); }
+.acd-icon-btn--filled { background: var(--button-filled-enabled); }
+.acd-icon-btn img, .acd-icon-btn svg { width: var(--size-icon); height: var(--size-icon); }
+
+/* Level bar (Pleos slider_track look) */
+.acd-bar { position: relative; overflow: hidden; border-radius: var(--radius-pill); background: var(--track); }
+.acd-bar > i { position: absolute; left: 0; bottom: 0; border-radius: inherit; background: var(--text-primary); }
+.acd-bar--h { height: 12px; width: 100%; }
+.acd-bar--h > i { top: 0; }
+.acd-bar--v { width: 24px; height: 160px; }
+.acd-bar--v > i { right: 0; }
+.acd-bar--throttle > i { background: var(--ac-accent); }
+.acd-bar--brake > i { background: var(--ac-brake); }
+.acd-pedal { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 84px; }
+.acd-pedal b { font-size: 20px; line-height: 24px; }
+.acd-pedal span { font-size: 20px; line-height: 24px; color: var(--text-tertiary); }
+
+/* Shift light */
+.acd-shift { display: flex; gap: 6px; width: 100%; }
+.acd-shift > i { flex: 1; height: 16px; border-radius: 4px; background: var(--track); }
+.acd-shift > i.s1 { background: var(--shift-stage-1); }
+.acd-shift > i.s2 { background: var(--shift-stage-2); }
+.acd-shift > i.s3 { background: var(--shift-stage-3); }
+
+/* Gear indicator, after the Pleos P R N D selector */
+.acd-gears { display: flex; gap: 0; }
+.acd-gears > span { width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; font: 700 32px/1 var(--font-sans); color: var(--text-quaternary); border-radius: 10px; }
+.acd-gears > span.is-on { background: var(--text-primary); color: var(--background-secondary); }
+
+/* Telltale */
+.acd-telltales { display: flex; gap: 12px; align-items: center; }
+.acd-telltale { width: 40px; height: auto; }
+.acd-telltale.is-off { filter: grayscale(1) opacity(.35); }
+
+/* Lap delta */
+.acd-delta { font-size: 20px; line-height: 24px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.acd-delta--slower { color: var(--ac-brake); }
+.acd-delta--equal { color: var(--ac-accent); }
+.acd-delta--faster { color: var(--text-primary); }
+.acd-delta--faster::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: var(--radius-pill); background: var(--ac-ok); margin-right: 8px; vertical-align: 1px; }
+.acd-delta--fastest { color: var(--ac-fastest); }
+
+/* Tyre tile */
+.acd-tyres { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-03); width: 320px; }
+.acd-tyre { height: 96px; border-radius: var(--radius-icon-button); background: var(--track); display: flex; align-items: center; justify-content: center; font: 700 30px/38px var(--font-sans); font-variant-numeric: tabular-nums; }
+.acd-tyre--cold { background: var(--ac-cold); }
+.acd-tyre--hot { background: var(--ac-hot); }
+
+/* Music player: the album art, blurred, is the ground; Pleos static/light ink on top */
+.acd-player { position: relative; overflow: hidden; border-radius: var(--radius-card); box-shadow: var(--shadow-level2); background: linear-gradient(315deg, var(--basic-600), var(--basic-800)); color: var(--static-light-100); }
+.acd-player__backdrop { position: absolute; inset: -20%; filter: blur(60px); }
+.acd-player__scrim { position: absolute; inset: 0; background: linear-gradient(90deg, var(--alpha-dark-300), var(--alpha-dark-500)); }
+.acd-player__body { position: relative; height: 100%; display: flex; align-items: center; gap: 40px; padding: var(--spacing-07); }
+.acd-player__art { height: 100%; aspect-ratio: 1; max-width: 40%; border-radius: var(--radius-icon-button); box-shadow: 0 16px 40px #00000066; background: var(--alpha-light-100); }
+.acd-player__info { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.acd-player__title { font-size: 36px; line-height: 44px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.acd-player__artist { margin-top: 2px; font-size: 24px; line-height: 28px; color: var(--static-light-200); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.acd-player__track { position: relative; margin-top: 28px; height: 8px; border-radius: var(--radius-pill); background: var(--alpha-light-200); overflow: hidden; }
+.acd-player__track > i { position: absolute; inset: 0 auto 0 0; background: var(--static-light-200); border-radius: inherit; }
+.acd-player__times { margin-top: 8px; display: flex; justify-content: space-between; font-size: 20px; line-height: 24px; color: var(--static-light-300); }
+.acd-player__controls { margin-top: 12px; display: flex; justify-content: space-between; align-items: center; }
+.acd-glyph { width: 64px; height: 64px; padding: 16px; border: 0; border-radius: var(--radius-pill); background: transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.acd-glyph svg { width: 100%; height: 100%; fill: var(--static-light-100); }
+.acd-glyph--lg { width: 80px; height: 80px; padding: 14px; }
+.acd-glyph:active, .acd-glyph.is-on { background: var(--alpha-light-200); }
+.acd-glyph:disabled { opacity: .35; cursor: default; }
