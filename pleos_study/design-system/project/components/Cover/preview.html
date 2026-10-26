@@ -1,0 +1,46 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Cover</title>
+<style>
+  html, body { margin: 0; background: var(--background-primary); }
+  .cv { position: relative; width: 960px; height: 288px; overflow: hidden; background: var(--background-primary); font-family: var(--font-sans); }
+  .cv svg { position: absolute; inset: 0; }
+  .accent { fill: var(--ac-accent); }
+  .filled { fill: var(--button-filled-enabled); }
+  .amber { fill: var(--ac-telltale); }
+  .fastest { fill: var(--ac-fastest); }
+  .tint { fill: var(--track); }
+  .s1 { fill: var(--shift-stage-1); } .s2 { fill: var(--shift-stage-2); } .s3 { fill: var(--shift-stage-3); } .off { fill: var(--track); }
+  .txt { position: absolute; left: 40px; bottom: 32px; max-width: 440px; }
+  .name { font-size: 112px; line-height: .95; font-weight: 800; letter-spacing: -3px; color: var(--text-primary); }
+  .tag { margin-top: 16px; font-size: 14px; line-height: 20px; color: var(--text-tertiary); }
+</style>
+</head>
+<body>
+<div class="cv">
+  <!--
+    blocks: ac-accent slab 200x232 (radius-card), button-filled-enabled 168x120 (radius-card), ac-telltale 152x96 (radius-icon-button), ac-fastest 64x64 (radius-pill), track 168x64 (radius-card)
+    arrangement: a tall accent slab bleeding off the top with satellites stacked to its right and off the right edge, the strip running underneath, all right of x=480
+    pattern: a literal shift-light strip, 15 pills lit stage-1 to stage-3 then dark, because the strip is the one shape only this dashboard has
+    steps and radii: gaps spacing-05 (16), segment 16 tall with 6 gaps and 4 corners, radius-card 32, radius-icon-button 20, radius-pill
+  -->
+  <svg width="960" height="288" viewBox="0 0 960 288" aria-hidden="true">
+    <rect class="accent" x="520" y="-16" width="200" height="232" rx="32"/>
+    <rect class="filled" x="736" y="16" width="168" height="120" rx="32"/>
+    <rect class="amber" x="920" y="16" width="152" height="96" rx="20"/>
+    <rect class="fastest" x="920" y="128" width="64" height="64" rx="32"/>
+    <rect class="tint" x="736" y="152" width="168" height="64" rx="32"/>
+    <g transform="translate(520 240)">
+      <rect class="s1" x="0" y="0" width="22" height="16" rx="4"/><rect class="s1" x="28" y="0" width="22" height="16" rx="4"/><rect class="s1" x="56" y="0" width="22" height="16" rx="4"/><rect class="s1" x="84" y="0" width="22" height="16" rx="4"/><rect class="s1" x="112" y="0" width="22" height="16" rx="4"/><rect class="s1" x="140" y="0" width="22" height="16" rx="4"/>
+      <rect class="s2" x="168" y="0" width="22" height="16" rx="4"/><rect class="s2" x="196" y="0" width="22" height="16" rx="4"/><rect class="s2" x="224" y="0" width="22" height="16" rx="4"/><rect class="s2" x="252" y="0" width="22" height="16" rx="4"/><rect class="s2" x="280" y="0" width="22" height="16" rx="4"/><rect class="s2" x="308" y="0" width="22" height="16" rx="4"/>
+      <rect class="s3" x="336" y="0" width="22" height="16" rx="4"/><rect class="s3" x="364" y="0" width="22" height="16" rx="4"/><rect class="s3" x="392" y="0" width="22" height="16" rx="4"/>
+    </g>
+  </svg>
+  <div class="txt">
+    <div class="name">AC 계기판</div>
+    <div class="tag">Pleos Connect 위에서 달리는 아세토코르사 텔레메트리 계기판</div>
+  </div>
+</div>
+</body>
+</html>
