@@ -1,0 +1,33 @@
+name: commit-convention
+
+# PR의 제목과 커밋 첫 줄이 O2 커밋 규칙(type: subject)을 지키는지 검사한다.
+# 브랜치 보호(Settings → Branches)에서 이 체크를 "필수"로 지정하면 규칙을 어긴 PR은 머지할 수 없다.
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: PR 제목
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: node .github/scripts/check-commit-convention.mjs "$TITLE"
+
+      - name: 커밋 메시지
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: git log --format=%s "$BASE..$HEAD" | node .github/scripts/check-commit-convention.mjs
