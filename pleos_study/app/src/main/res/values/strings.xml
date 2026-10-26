@@ -41,4 +41,5 @@
     <string name="music_unknown_title">알 수 없는 곡</string>
     <string name="track_learning">트랙 학습 중 · 결승선부터 한 바퀴를 돌면 지도가 완성돼요</string>
     <string name="track_waiting">위치 정보 대기 중</string>
+    <string name="track_no_coordinates">이 데이터 소스는 차 위치를 보내지 않아 지도를 그릴 수 없어요</string>
 </resources>

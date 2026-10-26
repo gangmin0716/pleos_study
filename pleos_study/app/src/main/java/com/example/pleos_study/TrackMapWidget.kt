@@ -17,9 +17,14 @@ class TrackMapWidget(parent: ViewGroup) : DashboardWidget(parent, R.layout.widge
     }
 
     override fun render(t: Telemetry) {
-        val position = t.lapPosition
-        if (position == null || t.carX == null || t.carZ == null) return
+        val position = t.lapPosition ?: return
         lapProgressText.text = "${(position * 100).toInt()}%"
+        if (t.carX == null || t.carZ == null) {
+            // SimHub's Property Server can't send coordinates: lap progress only, no map
+            trackHint.visibility = View.VISIBLE
+            trackHint.setText(R.string.track_no_coordinates)
+            return
+        }
         if (recorder.onSample(t.trackName ?: UNKNOWN_TRACK, position, t.carX, t.carZ)) {
             trackMap.setOutline(recorder.outline)
         }
