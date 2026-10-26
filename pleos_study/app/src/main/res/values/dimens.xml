@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pleos Connect component tokens (Figma: Pleos_Connect_design_assets ❖ Components) -->
+    <dimen name="radius_card">32dp</dimen>
+    <dimen name="radius_tile">20dp</dimen>
+    <dimen name="radius_button_small">16dp</dimen>
+    <dimen name="radius_icon_button">20dp</dimen>
+    <dimen name="button_small_height">64dp</dimen>
+    <dimen name="spacing_03">8dp</dimen>
+    <dimen name="spacing_04">12dp</dimen>
+    <dimen name="spacing_05">16dp</dimen>
+    <dimen name="spacing_07">32dp</dimen>
+    <!-- Close to Shadow/Light/Level2 (0,8 blur 32 @16% + 0,2 blur 2 @8%) -->
+    <dimen name="card_elevation">8dp</dimen>
+
+</resources>

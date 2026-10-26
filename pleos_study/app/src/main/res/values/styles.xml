@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Surfaces -->
+    <style name="Card">
+        <item name="android:background">@drawable/bg_card</item>
+        <item name="android:padding">@dimen/spacing_07</item>
+        <item name="android:elevation">@dimen/card_elevation</item>
+        <item name="android:outlineSpotShadowColor">#29000000</item>
+        <item name="android:outlineAmbientShadowColor">#14000000</item>
+    </style>
+
+    <!-- Pleos type scale (UI Design Guide ✦ Typography, Asta Sans). sp == px at 160dpi.
+         Read at a glance while driving: key values use Headline (48+, about 5 mm tall glyphs),
+         nothing on screen goes below Body/Medium (28, about 3 mm), per the guide's minimums -->
+    <!-- Title/Small: card titles -->
+    <style name="CardTitle">
+        <item name="android:textColor">@color/text_dark_primary</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineHeight">40sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Body/Medium: row labels and captions -->
+    <style name="CardLabel">
+        <item name="android:textColor">@color/text_dark_tertiary</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:lineHeight">36sp</item>
+    </style>
+
+    <!-- Title/Large: values -->
+    <style name="CardValue">
+        <item name="android:textColor">@color/text_dark_primary</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:lineHeight">52sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFeatureSettings">tnum</item>
+    </style>
+
+    <!-- Body/Medium, beside each pedal bar in the top bar -->
+    <style name="PedalLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_dark_tertiary</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <!-- No numbers on purpose: the fill alone reads at a glance, and figures that change every
+         frame pull the eye -->
+    <style name="PedalBar">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+    </style>
+
+    <!-- ivi_basic_button Type=Primary, Size=Small: 64dp tall, 16dp corners, Body/Small/Strong.
+         Not focusable, so AAOS rotary focus doesn't grey it out -->
+    <style name="BarButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/button_small_height</item>
+        <item name="android:minWidth">100dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingHorizontal">24dp</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:background">@drawable/bg_button_basic</item>
+        <item name="android:textColor">@color/text_dark_primary</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+    <!-- Transport glyphs on the music card: no fill, Pleos static/light ink -->
+    <style name="MediaGlyph">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:background">@drawable/bg_glyph_button</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:padding">16dp</item>
+        <item name="tint">@color/static_light_100</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+    <style name="MediaGlyph.Large">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:padding">14dp</item>
+    </style>
+
+    <style name="MediaGap">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!-- Body/Medium in static/light/300 -->
+    <style name="MediaTime">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/static_light_300</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:fontFeatureSettings">tnum</item>
+    </style>
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pleos Connect design assets (Figma), converted from SVG -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48.0dp"
+    android:viewportWidth="73.2777"
+    android:viewportHeight="73.2777">
+    <group android:translateX="-218.338" android:translateY="-43.4287">
+        <path
+            android:fillColor="#131417"
+            android:pathData="M258.14 62.4509C258.14 60.6989 256.722 59.2806 254.97 59.2806C253.218 59.2806 251.8 60.6989 251.8 62.4509V81.826C251.8 83.0583 252.512 84.1749 253.629 84.7012L266.836 90.8686C268.422 91.6067 270.308 90.92 271.053 89.3348C271.791 87.7496 271.104 85.8628 269.519 85.1183L258.14 79.8109V62.4573V62.4509Z" />
+        <path
+            android:fillColor="#131417"
+            android:fillType="evenOdd"
+            android:pathData="M254.97 43.4287C234.735 43.4287 218.338 59.8325 218.338 80.0612C218.338 100.29 234.741 116.694 254.97 116.694C275.199 116.694 291.603 100.29 291.603 80.0612C291.603 59.8325 275.199 43.4287 254.97 43.4287ZM224.678 80.0676C224.678 63.3366 238.239 49.7759 254.97 49.7759C271.701 49.7759 285.262 63.3366 285.262 80.0676C285.262 96.7986 271.701 110.359 254.97 110.359C238.239 110.359 224.678 96.7986 224.678 80.0676Z" />
+    </group>
+</vector>
