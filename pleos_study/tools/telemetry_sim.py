@@ -14,18 +14,29 @@ through the emulator's "Pleos Connect Virtual Console" (port 8088 inside the gue
 
     adb forward tcp:18088 tcp:8088
     python3 tools/telemetry_sim.py --pleos-console http://127.0.0.1:18088
+
+With real Assetto Corsa on a Windows PC running SimHub and its Property Server plugin, pass
+its live data on instead of simulating (same output, same mirroring; see tools/simhub_source.py):
+
+    python3 tools/telemetry_sim.py --simhub <PC IP> --pleos-console http://127.0.0.1:18088
 """
 
 import argparse
 import json
 import math
+import os
 import random
 import socket
+import sys
 import threading
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
+
+# `python3 -I` leaves this script's folder off the import path; the SimHub module sits beside it
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from simhub_source import SimHubSource  # noqa: E402
 
 MAX_RPM = 8500
 IDLE_RPM = 1100
@@ -406,6 +417,18 @@ class PleosConsoleMirror:
             time.sleep(self.PUSH_INTERVAL)
 
 
+def pass_on_simhub(source, out, mirror, hz):
+    """Sends SimHub's latest values at `hz`; nothing goes out while no game is being driven."""
+    print(f"passing on SimHub telemetry from {source.host}:{source.port} at {hz} Hz", flush=True)
+    while True:
+        packet = source.packet()
+        if packet is not None:
+            out.send(json.dumps(packet, ensure_ascii=False, separators=(",", ":")))
+            if mirror:
+                mirror.update(packet)
+        time.sleep(1 / hz)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--host", default="127.0.0.1")
@@ -416,11 +439,19 @@ def main():
                         help="run the simulated car faster than real time (for testing)")
     parser.add_argument("--pleos-console", metavar="URL",
                         help="also drive the Pleos built-in cluster, e.g. http://127.0.0.1:18088")
+    parser.add_argument("--simhub", metavar="HOST[:PORT]",
+                        help="pass on live data from SimHub's Property Server (port 18082) instead of simulating")
+    parser.add_argument("--steer-lock", type=float, default=540,
+                        help="with --simhub: steering wheel lock to lock in degrees (GT3 cars are about 540)")
     args = parser.parse_args()
 
-    car = Car(TRACKS[args.track]())
     out = Broadcaster(args.host, args.port)
     mirror = PleosConsoleMirror(args.pleos_console) if args.pleos_console else None
+    if args.simhub:
+        pass_on_simhub(SimHubSource(args.simhub, args.steer_lock), out, mirror, args.hz)
+        return
+
+    car = Car(TRACKS[args.track]())
     print(f"streaming fake AC telemetry ({car.track.name}) on {args.host}:{args.port} at {args.hz} Hz", flush=True)
 
     physics_dt = 1 / 120
